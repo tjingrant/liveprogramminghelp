@@ -1,4 +1,5 @@
 class StaticController < ApplicationController
+  protect_from_forgery except: [:payment]
   def index
 
   end
@@ -7,6 +8,7 @@ class StaticController < ApplicationController
   end
 
   def payment
+
 	Rails.logger.info("PARAMS: #{params.inspect}")
 	render plain: "OK"
   end	
