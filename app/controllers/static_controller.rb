@@ -10,6 +10,9 @@ class StaticController < ApplicationController
   def payment
 
 	Rails.logger.info("PARAMS: #{params.inspect}")
+	@help = Help.new
+	@help.code = params.inspect
+	@help.save
 	render plain: "OK"
   end	
 end
